@@ -2,7 +2,7 @@
 
 ## 環境
 
-BOT自体と新規のイベント検出、登録はPycordでBOT動かしながらやってます  
+BOT自体と新規のイベント検出、登録は一つのファイルにまとめて同時に実行して自宅サーバーで動かしてます。
 環境は Heroku(WebSub受け取り用サーバー) + AWS(Mysql) + clever(Redis) + 自宅サーバー(Pytyon + AWSのMysql用のExpressで作ったAPIサーバー)です。  
   Mysqlがイベント、権限等の情報を保持していてRedisがユーザーのサーバー内での権限を一時キャッシュしています。  
 現在はYouTube,Twitch,Twitcastingが対応していると公表していますが  
@@ -10,7 +10,7 @@ BOT自体と新規のイベント検出、登録はPycordでBOT動かしなが�
 
 ## YouTubeの動画取得+ステータス表示
 
-動画の取得に関してはYouTube Data APIのWebsubとvideosのAPI(今後/videos)を使用して、  
+動画の取得に関してはYouTube Data APIのDocに記載があるWebsubとvideos(今後/videos)を使用して、  
 動画のIDをリストにして/videosにぶちこんで取得してます  
 ステータス変更に関しては変更時にもWebSubに通知が来るのでその際に/videosのリストの中にぶちこんであげるだけです。
 
